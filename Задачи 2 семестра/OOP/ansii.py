@@ -3,7 +3,6 @@ class Drawing:
         a = [symbol] * columns
         self.image = [a.copy() for i in range(lines)]
 
-
     def print(self):
         for line in self.image:
             print(' '.join(line))
