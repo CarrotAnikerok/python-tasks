@@ -30,8 +30,6 @@ number(s)
 
 def spaces(a):
     sample = r"\s+,"
-    for m in re.finditer(sample, a):
-        print(m)
     f = re.findall(sample,a)
     for i in f:
         a = a.replace(i, ",")
