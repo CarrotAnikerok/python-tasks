@@ -1,9 +1,8 @@
 class Drawing:
     def __init__(self, lines, columns, symbol):
         a = [symbol] * columns
-        self.image = []
-        for i in range(lines):
-            self.image.append(a.copy())
+        self.image = [a.copy() for i in range(lines)]
+
 
     def print(self):
         for line in self.image:
