@@ -65,10 +65,12 @@ class Rational:
 numb = Rational(1, 6)
 numb2 = Rational(1, 2)
 print(numb.__str__())
+print(numb)
 print(numb.as_number())
 print(numb.__add__(numb2))
 print(numb + numb2)
 print(numb.__mul__(numb2))
+print(numb * numb2)
 print(numb.__sub__(numb2))
 numb *= numb2
 print(numb)
