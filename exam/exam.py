@@ -121,11 +121,11 @@ def Razb2(a,x,b):
             stroka = new_text[i]
         if r <=x:
             stroka += " " + new_text[i]
-    big_stroka += stroka + "\n"
+    big_stroka += Stroka(stroka.split(), x) + "\n"
     with open(b, mode="w", encoding="utf8") as f:
         f.write(big_stroka)
 
-Razb2("1.txt", 40, "2.txt")
+Razb2("1.txt", 14, "2.txt")
 
 
 
