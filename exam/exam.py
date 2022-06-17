@@ -57,6 +57,8 @@ print(Slag(29,6))
 # task 6
 
 def Stroka(a,x):
+    if len(a) == 1:
+        return a[0]
     x = x - len("".join(a))
     spisok_ch = Slag(x,len(a)-1)
     spisok_st = Spisok_strok(spisok_ch, " ")
@@ -96,14 +98,36 @@ def Razb(a, x, b):
             big_stroka+= stroka + "\n"
             stroka = new_text[i]
         if r <= x:
-            stroka+= " "+new_text[i]
+            stroka+= " " + new_text[i]
     big_stroka += stroka + "\n"
     with open(b, mode="w", encoding="utf8") as f:
         f.write(big_stroka)
 
 Razb("file1.txt", 12, "file2.txt")
 
-#task 9
+#task 10
+
+def Razb2(a,x,b):
+    with open(a, mode="r", encoding="utf-8") as f:
+        text = f.read()
+    new_text = text.split()
+    stroka = new_text[0]
+    big_stroka = ""
+    for i in range(1, len(new_text)):
+        r = len(stroka + " " + new_text[i])
+
+        if r > x:
+            big_stroka += Stroka(stroka.split(), x) + "\n"
+            stroka = new_text[i]
+        if r <=x:
+            stroka += " " + new_text[i]
+    big_stroka += stroka + "\n"
+    with open(b, mode="w", encoding="utf8") as f:
+        f.write(big_stroka)
+
+Razb2("1.txt", 40, "2.txt")
+
+
 
 
 
